@@ -3,15 +3,7 @@ from .forms import MyForm
 from flask import redirect, flash
 from . import mail
 from flask_mail import Message
-
-
-@app.route("/email-test")
-def send_email():
-    msg = Message(
-        "Hello", body="Hello World", recipients=["rexsyflaskportofolio@gmail.com"]
-    )
-    mail.send(msg)
-    return "Email sent"
+from . import articles
 
 
 @app.route("/")
@@ -41,6 +33,4 @@ def about_me():
 
 @app.route("/blog")
 def blog():
-    return render(
-        "blog.html",
-    )
+    return render("blog.html", articles=articles)

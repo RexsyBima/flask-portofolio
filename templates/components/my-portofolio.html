@@ -20,17 +20,12 @@
     <div class="group relative flex gap-x-5">
       <!-- Right Content -->
       <div class="grow pb-8 group-last:pb-0">
-        <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
-          2023 - Present
-        </h3>
+        <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">{{ p.year }}</h3>
   
         <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">{{ p.title }}</p>
   
         <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">{{ p.description }}</p>
-        <p class=" {% if p.isMediumArticle%} hidden {%endif%} mt-1 text-sm text-gray-600 dark:text-neutral-400">Tech Used : {{ p.tech_used }}</p>
         <a class="mt-1 text-sm text-blue-600 dark:text-blue-600 hover:text-blue-900 " href="{{ p.url }}">{{ p.link }}</a>
-  
-        <ul class="list-disc ms-6 mt-3 space-y-1.5">
           {% for todo in p.jobdesc %}
           <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">{{ todo }}</li>
           {% endfor %}
