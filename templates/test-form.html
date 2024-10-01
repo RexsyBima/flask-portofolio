@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Homepage{% endblock title %}
+{% block body%}
+<form method="POST" >
+    {{ form.csrf_token }}
+
+    {{ form.name.label }} {{ form.name(size=20) }}
+    {{ form.email.label }} {{ form.email(size=20) }}
+    {{ form.company.label }} {{ form.company(size=20) }}
+    {{ form.description.label }} {{ form.description(size=20) }}
+
+    <input type="submit" value="Go">
+</form>
+{% endblock body%}

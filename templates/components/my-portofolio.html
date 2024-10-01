@@ -1,0 +1,45 @@
+<!-- Hero -->
+<div class="bg-neutral-900 overflow-hidden">
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
+      <!-- Title -->
+      <div class="text-center">
+        <h1 class="text-3xl text-gray-800 font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200">
+          My <span class="text-[#ff0]">Works</span>
+        </h1>
+      </div>
+      <!-- End Title -->
+    </div>
+  </div>
+</div>
+<!-- End Hero -->
+<div class="bg-neutral-900 px-14">
+    <!-- Item -->
+
+    {% for p in portofolios %}
+    <div class="group relative flex gap-x-5">
+      <!-- Right Content -->
+      <div class="grow pb-8 group-last:pb-0">
+        <h3 class="mb-1 text-xs text-gray-600 dark:text-neutral-400">
+          2023 - Present
+        </h3>
+  
+        <p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">{{ p.title }}</p>
+  
+        <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">{{ p.description }}</p>
+        <p class=" {% if p.isMediumArticle%} hidden {%endif%} mt-1 text-sm text-gray-600 dark:text-neutral-400">Tech Used : {{ p.tech_used }}</p>
+        <a class="mt-1 text-sm text-blue-600 dark:text-blue-600 hover:text-blue-900 " href="{{ p.url }}">{{ p.link }}</a>
+  
+        <ul class="list-disc ms-6 mt-3 space-y-1.5">
+          {% for todo in p.jobdesc %}
+          <li class="ps-1 text-sm text-gray-600 dark:text-neutral-400">{{ todo }}</li>
+          {% endfor %}
+       </ul>
+      </div>
+      <!-- End Right Content -->
+    </div>
+    <!-- End Item -->
+  {% endfor %}
+ 
+ </div>
+  <!-- End Timeline -->
