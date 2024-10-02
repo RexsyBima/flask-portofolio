@@ -1,9 +1,8 @@
 from app import app, render, portofolios
 from .forms import MyForm
 from flask import redirect, flash
-from . import mail
+from . import mail, articles
 from flask_mail import Message
-from . import articles
 
 
 @app.route("/")
